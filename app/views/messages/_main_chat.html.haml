@@ -20,8 +20,8 @@
   .form
     %form.new_message
       .input-box
-        %input.input-box__text{:name => "message[content]", :type => "text", :placeholder => "type a message"}/
+        %input.input-box__text{name: "message[content]", type: "text", placeholder: "type a message"}/
         %label.input-box__image
           = icon('far', 'image')
-          %input.input-box__image__file{:name => "message[image]", :type => "file"}
-      %input.submit-btn{:name => "comit", :type => "submit", :value => "Send"}/
+          %input.input-box__image__file{name: "message[image]", type: "file"}
+      %input.submit-btn{name: "comit", type: "submit", value: "Send"}/
