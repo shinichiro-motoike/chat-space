@@ -1,0 +1,27 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group test
+      %ul.main-header__left-box__member-list Member：
+      %li.main-header__left-box__member-list__member motoike
+    .main-header__edit-btn 
+      = link_to "#" do
+        Edit
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker motoike
+        %p.message__upper-info__date 2019/12/19(Thu) 14:00:00
+      %p.massage__text まだメッセージはありません 
+      .message__upper-info
+        %p.message__upper-info__talker motoike
+        %p.message__upper-info__date 2019/12/19(Thu) 14:00:00
+      %p.massage__text まだメッセージはありません 
+  .form
+    %form.new_message
+      .input-box
+        %input.input-box__text{name: "message[content]", type: "text", placeholder: "type a message"}/
+        %label.input-box__image
+          = icon('far', 'image')
+          %input.input-box__image__file{name: "message[image]", type: "file"}
+      %input.submit-btn{name: "comit", type: "submit", value: "Send"}/

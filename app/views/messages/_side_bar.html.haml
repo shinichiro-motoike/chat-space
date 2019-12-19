@@ -1,0 +1,18 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name
+        motoike
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+          = link_to "#" do
+            = icon('fas', 'edit',  class: "side-header__box__menu__btn--edit")
+        %il.side-header__box__menu__edit-user
+          = link_to "#" do
+            = icon('fas', 'cog',  class: "side-header__box__menu__btn--cog")
+  .groups
+    = link_to "#", class:"group" do
+      %p.group__name
+        techcamp
+      %p.group__latest-message
+        まだメッセージがありません
