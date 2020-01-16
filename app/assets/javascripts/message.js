@@ -126,7 +126,6 @@ var reloadMessages = function() {
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages);
       if (messages.length !== 0) {
       var insertHTML = '';
       $.each(messages, function(i, message) {
@@ -139,7 +138,7 @@ var reloadMessages = function() {
     }
      })
      .fail(function() {
-      console.log('error');
+      alert('error');
     });
 };
 if (document.location.href.match(/\/groups\/\d+\/messages/)) {
