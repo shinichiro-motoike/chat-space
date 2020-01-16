@@ -12,11 +12,11 @@
         Edit
   .messages
     = render partial: 'message', collection: @messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker
-        %p.message__upper-info__date
-      %p.massage__text 
+    -# .message
+    -#   .message__upper-info
+    -#     %p.message__upper-info__talker
+    -#     %p.message__upper-info__date
+    -#   %p.massage__text 
   .form
     = form_for [@group, @message] do |f|
       .input-box
