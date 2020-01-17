@@ -5,7 +5,7 @@ $(function(){
       `<div class="message" data-message-id=${message.id}>
          <div class="upper-message">
            <div class="message__upper-info__talker">
-             ${message.user_name}
+              
            </div>
            <div class="message__upper-info__date">
              ${message.created_at}
@@ -67,54 +67,56 @@ $('#new_message').on('submit', function(e){
 
 var buildHTML = function(message) {
   if (message.content && message.image) {
-    var html = `<div class="message" data-message-id=` + message.id + `>` +
-      `<div class="upper-message">` +
-        `<div class="message__upper-info__talker">` +
-          message.user_name +
-        `</div>` +
-        `<div class="message__upper-info__date">` +
-          message.created_at +
-        `</div>` +
-      `</div>` +
-      `<div class="lower-message">` +
-        `<p class="lower-message__content">` +
-          message.content +
-        `</p>` +
-        `<img src="` + message.image + `" class="lower-message__image" >` +
-      `</div>` +
-    `</div>`
+    var html = `<div class="message" data-message-id=${message.id}>
+                  <div class="upper-message">
+                    <div class="message__upper-info__talker">
+                      ${message.user_name}
+                    </div>
+                    <div class="message__upper-info__date">
+                    ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="lower-message">
+                  <p class="lower-message__content">
+                  ${message.content}
+                  </p>
+                  <img src=${message.image} >
+                  </div>
+                 </div>`
+                 return html;
   } else if (message.content) {
-    var html = `<div class="message" data-message-id=` + message.id + `>` +
-      `<div class="upper-message">` +
-        `<div class="message__upper-info__talker">` +
-          message.user_name +
-        `</div>` +
-        `<div class="message__upper-info__date">` +
-          message.created_at +
-        `</div>` +
-      `</div>` +
-      `<div class="lower-message">` +
-        `<p class="lower-message__content">` +
-          message.content +
-        `</p>` +
-      `</div>` +
-    `</div>`
+    var html = `<div class="message" data-message-id=${message.id}>
+                  <div class="upper-message">
+                    <div class="message__upper-info__talker">
+                      ${message.user_name}
+                    </div>
+                   <div class="message__upper-info__date">
+                     ${message.created_at}
+                   </div>
+                  </div>
+                  <div class="lower-message">
+                  <p class="lower-message__content">
+                    ${message.content}
+                  </p>
+                  </div>
+                </div>`
+                return html;
   } else if (message.image) {
-    var html = `<div class="message" data-message-id=` + message.id + `>` +
-      `<div class="upper-message">` +
-        `<div class="message__upper-info__talker">` +
-          message.user_name +
-        `</div>` +
-        `<div class="message__upper-info__date">` +
-          message.created_at +
-        `</div>` +
-      `</div>` +
-      `<div class="lower-message">` +
-        `<img src="` + message.image + `" class="lower-message__image" >` +
-      `</div>` +
-    `</div>`
+    var html = `<div class="message" data-message-id=${message.id}>
+                  <div class="upper-message">
+                    <div class="message__upper-info__talker">
+                      ${message.user_name}
+                    </div>
+                    <div class="message__upper-info__date">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="lower-message">
+                  <img src=${message.image} >
+                  </div>
+                 </div>`
+                 return html;
   };
-  return html;
 };
 
 var reloadMessages = function() {
